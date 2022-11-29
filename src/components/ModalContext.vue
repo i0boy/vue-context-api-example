@@ -7,10 +7,7 @@ const navRef = ref(null);
 const setNavRef = (el) => {
   navRef.value = el;
 };
-const getNavRef = () => {
-  return navRef.value;
-};
-provide("navRef", { getNavRef, setNavRef });
+provide("navRef", { navRef, setNavRef });
 </script>
 <template>
   <slot></slot>
