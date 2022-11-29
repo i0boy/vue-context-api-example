@@ -11,21 +11,19 @@ const toggle = () => {
 </script>
 
 <template>
-  <div>
-    <div v-if="open">
-      <ModalContext>
-        <ModalLayout> 모달이 그려질 위치 </ModalLayout>
-        <div>
-          <a href="https://vitejs.dev" target="_blank">
-            <img src="/vite.svg" class="logo" alt="Vite logo" />
-          </a>
-        </div>
-        <ModalPortal />
-      </ModalContext>
+  <ModalContext>
+    <div>
+      <ModalLayout v-if="open"> 모달이 그려질 위치 </ModalLayout>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" class="logo" alt="Vite logo" />
+        </a>
+      </div>
+
+      <button @click="toggle">{{ open ? "close" : "open" }} modal</button>
     </div>
-    <div v-else></div>
-    <button @click="toggle">{{ open ? "close" : "open" }} modal</button>
-  </div>
+    <ModalPortal v-if="open" />
+  </ModalContext>
 </template>
 
 <style scoped>
