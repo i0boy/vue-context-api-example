@@ -1,6 +1,6 @@
-<script setup></script>
 <template>
   <!-- Modal content -->
+
   <div class="modal-content">
     <slot></slot>
   </div>

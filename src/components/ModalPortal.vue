@@ -1,8 +1,29 @@
 <script setup>
-import { inject } from "vue";
+import {
+  inject,
+  onActivated,
+  onDeactivated,
+  onMounted,
+  onUnmounted,
+} from "vue";
 import ModalContent from "./ModalContent.vue";
 const { open, close, state } = inject("state");
 const { navRef } = inject("navRef");
+
+onActivated(() => {
+  console.log("activated");
+});
+
+onDeactivated(() => {
+  console.log("deactivated");
+});
+onMounted(() => {
+  console.log("mounted");
+});
+
+onUnmounted(() => {
+  console.log("unmounted");
+});
 </script>
 
 <template>
