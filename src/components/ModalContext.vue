@@ -1,5 +1,6 @@
 <script setup>
 import { provide, ref } from "vue";
+import ModalOpenContext from "./ModalOpenContext.vue";
 
 // declare a ref to hold the element reference
 // the name must match template ref value
@@ -10,5 +11,7 @@ const setNavRef = (el) => {
 provide("navRef", { navRef, setNavRef });
 </script>
 <template>
-  <slot></slot>
+  <ModalOpenContext>
+    <slot></slot>
+  </ModalOpenContext>
 </template>
